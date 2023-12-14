@@ -1,0 +1,40 @@
+﻿@page "{id:int}"
+@model WebApplication1.Pages.Accounts.EditModel
+@{
+    ViewData["Title"] = "Account Update";
+}
+
+<div class="text-center">
+    <h2>@ViewData["Title"]</h2>
+
+    <form method="post" class="account-edit-container">
+        <div><strong>Client ID</strong></div>
+        <div>@Model.ClientAccount.ClientId</div>
+        <input asp-for="ClientAccount.ClientId" type="hidden" />
+
+        <div><strong>Last Name</strong></div>
+        <div><input type="text" asp-for="ClientAccount.LastName" class="form-control" /></div>
+
+        <div><strong>First Name</strong></div>
+        <div><input type="text" asp-for="ClientAccount.FirstName" class="form-control" /></div>
+
+        <div><strong>Account Number</strong></div>
+        <div>@Model.ClientAccount.AccountNum</div>
+        <input asp-for="ClientAccount.AccountNum" type="hidden" />
+
+        <div><strong>Email</strong></div>
+        <div>@Model.ClientAccount.Email</div>
+        <input asp-for="ClientAccount.Email" type="hidden" />
+
+        <div><strong>Account Type</strong></div>
+        <div>@Model.ClientAccount.AccountType</div>
+        <input asp-for="ClientAccount.AccountType" type="hidden" />
+
+        <div><strong>Balance</strong></div>
+        <div><input type="text" asp-for="ClientAccount.Balance" class="form-control" /></div>
+
+        <div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>

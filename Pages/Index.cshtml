@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h2>Welcome!</h2>
+    <h6>Select Account Type:</h6>
+
+    <form method="get" asp-page="/Accounts/Index">
+        <select asp-for="filteredValue">
+            <option value="">All</option>
+            <option value="Chequing">Chequing</option>
+            <option value="Savings">Savings</option>
+        </select>
+        <input type="submit" value="Submit" />
+    </form>
+</div>

@@ -1,0 +1,34 @@
+﻿@page "{id:int}"
+@model WebApplication1.Pages.Accounts.DetailModel
+@{
+    ViewData["Title"] = "Account Detail";
+}
+
+<div class="text-center">
+    <h2>@ViewData["Title"]</h2>
+
+    <div class="account-detail-container">
+        <div><strong>Client ID</strong></div>
+        <div>@Model.ClientAccount.ClientId</div>
+
+        <div><strong>Last Name</strong></div>
+        <div>@Model.ClientAccount.LastName</div>
+
+        <div><strong>First Name</strong></div>
+        <div>@Model.ClientAccount.FirstName</div>
+
+        <div><strong>Account Number</strong></div>
+        <div>@Model.ClientAccount.AccountNum</div>
+
+        <div><strong>Email</strong></div>
+        <div>@Model.ClientAccount.Email</div>
+
+        <div><strong>Account Type</strong></div>
+        <div>@Model.ClientAccount.AccountType</div>
+
+        <div><strong>Balance</strong></div>
+        <div>@Model.ClientAccount.Balance.ToString("N2")</div>
+
+        <a asp-page="/Accounts/Edit" asp-route-id="@Model.ClientAccount.ClientId" class="btn btn-primary">Edit</a>
+    </div>
+</div>
